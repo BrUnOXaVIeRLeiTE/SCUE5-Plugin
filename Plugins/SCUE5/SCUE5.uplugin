@@ -1,0 +1,36 @@
+{
+	"FileVersion": 1,
+	"Version": 1,
+	"VersionName": "2.0.4",
+	"EngineVersion" : "5.0.0",
+	"FriendlyName": "Secure-Client UE4",
+	"Description": "Secure-Client is an Encryption Plugin, a C++ system designed to provide intuitive anti-cheat capability for PC Games developed on Unreal Engine 4.",
+	"Category": "SYNAPTECH",
+	"CreatedBy": "(C) Bruno Xavier Leite",
+	"CreatedByURL": "https://brunoxavierleite.wordpress.com",
+	"DocsURL": "https://forums.unrealengine.com/showthread.php?97229-Plugin-Anti-Cheat-System",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/cff7ca410375488fb0d13221b7446041",
+	"SupportURL": "mailto:bruno_xavier_@msn.com",
+	"CanContainContent": false,
+	"EnabledByDefault": true,
+	"IsBetaVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "SCUE5",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "SCUE5Editor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		}
+	]
+}
