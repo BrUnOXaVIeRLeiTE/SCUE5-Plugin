@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
-//			Copyright 2016 (C) Bruno Xavier Leite
+//			Copyright 2025 (C) Bruno Xavier Leite
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -368,10 +368,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV2DXAxisLabel","X"))
 					]	
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV2DXLabelToolTip","X value"))
 					.Value(this,&SVector2DBox::GetValueX)
@@ -396,10 +396,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV2DYAxisLabel","Y"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV2DYAxisLabelToolTip","Y value"))
 					.Value(this,&SVector2DBox::GetValueY)
@@ -465,10 +465,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV3DXAxisLabel","X"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV3DXLabelToolTip","X value"))
 					.Value(this,&SVector3DBox::GetValueX)
@@ -493,10 +493,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV3DYAxisLabel","Y"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV3DYAxisLabelToolTip","Y value"))
 					.Value(this,&SVector3DBox::GetValueY)
@@ -521,10 +521,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV3DZAxisLabel","Z"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV3DZAxisLabelToolTip","Z value"))
 					.Value(this,&SVector3DBox::GetValueZ)
@@ -596,10 +596,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV4DXAxisLabel","X"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV4DXLabelToolTip","X value"))
 					.Value(this,&SVector4DBox::GetValueX)
@@ -624,10 +624,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV4DYAxisLabel","Y"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV4DYAxisLabelToolTip","Y value"))
 					.Value(this,&SVector4DBox::GetValueY)
@@ -652,10 +652,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV4DZAxisLabel","Z"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV4DZAxisLabelToolTip","Z value"))
 					.Value(this,&SVector4DBox::GetValueZ)
@@ -680,10 +680,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSV4DWAxisLabel","W"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSV4DWAxisLabelToolTip","W value"))
 					.Value(this,&SVector4DBox::GetValueW)
@@ -755,10 +755,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSColorRLabel","R"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSColorRLabelToolTip","Red value"))
 					.Value(this,&SColorBox::GetValueR)
@@ -783,10 +783,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSColorGLabel","G"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSColorGLabelToolTip","Green value"))
 					.Value(this,&SColorBox::GetValueG)
@@ -811,10 +811,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSColorBLabel","B"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSColorBLabelToolTip","Blue value"))
 					.Value(this,&SColorBox::GetValueB)
@@ -839,10 +839,10 @@ public:
 					.Label()
 					[
 						SNew(STextBlock)
-						.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+						.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 						.Text(LOCTEXT("FSColorALabel","A"))
 					]
-					.Font(FEditorStyle::GetFontStyle("Graph.VectorEditableTextBox"))
+					.Font(FAppStyle::GetFontStyle("Graph.VectorEditableTextBox"))
 					.UndeterminedString(LOCTEXT("MultipleValues","Multiple Values"))
 					.ToolTipText(LOCTEXT("FSColorALabelToolTip","Alpha value"))
 					.Value(this,&SColorBox::GetValueA)

@@ -1,14 +1,18 @@
 using UnrealBuildTool;
 using System.IO;
 
-public class SCUE5Editor : ModuleRules {
-	public SCUE5Editor(ReadOnlyTargetRules Target) : base(Target) {
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+public class SCUE5Editor : ModuleRules
+{
+	public SCUE5Editor(ReadOnlyTargetRules Target) : base(Target)
+	{
 		PrivatePCHHeaderFile = "Private/SCUE5EditorPrivatePCH.h";
-		bEnforceIWYU = true;
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+		IWYUSupport = IWYUSupport.None;
 		//
-		PrivateDependencyModuleNames.AddRange(
-			new string[] {
+		PrivateDependencyModuleNames.AddRange
+		(
+			new string[]
+			{
 				"Core",
 				"Slate",
 				"SCUE5",
@@ -21,10 +25,10 @@ public class SCUE5Editor : ModuleRules {
 				"LevelEditor",
 				"CoreUObject",
 				"PropertyEditor"
-			}///
-		);//
+			}
+		);
 		//
 		PrivateIncludePaths.Add(Path.Combine(ModuleDirectory,"Private"));
 		PublicIncludePaths.Add(Path.Combine(ModuleDirectory,"Public"));
-	}///
+	}
 }

@@ -1,8 +1,10 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
-//		Copyright 2016 (C) Bruno Xavier B. Leite
+//		Copyright 2025 (C) Bruno Xavier B. Leite
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma once
 
 #if PLATFORM_WINDOWS
  #include "Windows/AllowWindowsPlatformTypes.h"
@@ -11,10 +13,9 @@
  #include "Windows/HideWindowsPlatformTypes.h"
 #endif
 
-#pragma once
-
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "Engine/GameInstance.h"
 #include "UObject/WeakObjectPtr.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "Runtime/Engine/Classes/Engine/Engine.h"
@@ -3329,19 +3330,19 @@ FORCEINLINE bool operator != (FSafeVector2D &FSV, FSafeVector2D &V) {
 }
 
 FORCEINLINE bool operator > (FSafeVector2D &FSV, FSafeVector2D &V) {
-	return (FSV.GetValue()>V.GetValue());
+	return FSV.GetValue().ComponentwiseAllGreaterThan(V.GetValue());
 }
 
 FORCEINLINE bool operator < (FSafeVector2D &FSV, FSafeVector2D &V) {
-	return (FSV.GetValue()<V.GetValue());
+	return FSV.GetValue().ComponentwiseAllLessThan(V.GetValue());
 }
 
 FORCEINLINE bool operator >= (FSafeVector2D &FSV, FSafeVector2D &V) {
-	return (FSV.GetValue()>=V.GetValue());
+	return FSV.GetValue().ComponentwiseAllGreaterOrEqual(V.GetValue());
 }
 
 FORCEINLINE bool operator <= (FSafeVector2D &FSV, FSafeVector2D &V) {
-	return (FSV.GetValue()<=V.GetValue());
+	return FSV.GetValue().ComponentwiseAllLessOrEqual(V.GetValue());
 }
 
 FORCEINLINE FSafeVector2D operator + (FSafeVector2D &FSV, FSafeVector2D &V) {
@@ -3377,19 +3378,19 @@ FORCEINLINE bool operator != (FSafeVector2D &FSV, const FVector2D &V) {
 }
 
 FORCEINLINE bool operator > (FSafeVector2D &FSV, const FVector2D &V) {
-	return (FSV.GetValue()>V);
+	return FSV.GetValue().ComponentwiseAllGreaterThan(V);
 }
 
 FORCEINLINE bool operator < (FSafeVector2D &FSV, const FVector2D &V) {
-	return (FSV.GetValue()<V);
+	return FSV.GetValue().ComponentwiseAllLessThan(V);
 }
 
 FORCEINLINE bool operator >= (FSafeVector2D &FSV, const FVector2D &V) {
-	return (FSV.GetValue()>=V);
+	return FSV.GetValue().ComponentwiseAllGreaterOrEqual(V);
 }
 
 FORCEINLINE bool operator <= (FSafeVector2D &FSV, const FVector2D &V) {
-	return (FSV.GetValue()<=V);
+	return FSV.GetValue().ComponentwiseAllLessOrEqual(V);
 }
 
 FORCEINLINE FSafeVector2D operator + (FSafeVector2D &FSV, const FVector2D &V) {
@@ -3426,19 +3427,19 @@ FORCEINLINE bool operator != (const FVector2D &V, FSafeVector2D &FSV) {
 }
 
 FORCEINLINE bool operator > (const FVector2D &V, FSafeVector2D &FSV) {
-	return (V>FSV.GetValue());
+	return V.ComponentwiseAllGreaterThan(FSV.GetValue());
 }
 
 FORCEINLINE bool operator < (const FVector2D &V, FSafeVector2D &FSV) {
-	return (V<FSV.GetValue());
+	return V.ComponentwiseAllLessThan(FSV.GetValue());
 }
 
 FORCEINLINE bool operator >= (const FVector2D &V, FSafeVector2D &FSV) {
-	return (V>=FSV.GetValue());
+	return V.ComponentwiseAllGreaterOrEqual(FSV.GetValue());
 }
 
 FORCEINLINE bool operator <= (const FVector2D &V, FSafeVector2D &FSV) {
-	return (FSV.GetValue()<=V);
+	return FSV.GetValue().ComponentwiseAllLessOrEqual(V);
 }
 
 FORCEINLINE FVector2D operator + (const FVector2D &V, FSafeVector2D &FSV) {
@@ -4047,19 +4048,19 @@ public:
 	void InvokeGuard() {
 	#if PLATFORM_WINDOWS
 		#if WITH_EDITOR
-		//GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE5/Source/ThirdParty/x64"),Guardx64),Editor,false,HideGameGuard,HideGameGuard,&GuardPID,0,nullptr,nullptr);
-		GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x64"),Guardx64),Editor,false,HideGameGuard,HideGameGuard,&GuardPID,0,nullptr,nullptr);
+		GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE4/Source/ThirdParty/x64"),Guardx64),Editor,false,HideGameGuard,HideGameGuard,&GuardPID,0,nullptr,nullptr);
+		//GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x64"),Guardx64),Editor,false,HideGameGuard,HideGameGuard,&GuardPID,0,nullptr,nullptr);
 		#else
 			#if !PLATFORM_64BITS
-			//if (!FPaths::FileExists(FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE5/Source/ThirdParty/x86/"),Guardx86))) {FGenericPlatformMisc::RequestExit(false);}
-			//GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE5/Source/ThirdParty/x86/"),Guardx86),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
-			if (!FPaths::FileExists(FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x86/"),Guardx86))) {FGenericPlatformMisc::RequestExit(false);}
-			GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x86/"),Guardx86),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
+			if (!FPaths::FileExists(FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE4/Source/ThirdParty/x86/"),Guardx86))) {FGenericPlatformMisc::RequestExit(false);}
+			GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE4/Source/ThirdParty/x86/"),Guardx86),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
+			//if (!FPaths::FileExists(FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x86/"),Guardx86))) {FGenericPlatformMisc::RequestExit(false);}
+			//GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x86/"),Guardx86),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
 			#else
-			//if (!FPaths::FileExists(FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE5/Source/ThirdParty/x64/"),Guardx64))) {FGenericPlatformMisc::RequestExit(false);}
-			//GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE5/Source/ThirdParty/x64/"),Guardx64),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
-			if (!FPaths::FileExists(FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x64/"),Guardx64))) {FGenericPlatformMisc::RequestExit(false);}
-			GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x64/"),Guardx64),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
+			if (!FPaths::FileExists(FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE4/Source/ThirdParty/x64/"),Guardx64))) {FGenericPlatformMisc::RequestExit(false);}
+			GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::EnginePluginsDir(),TEXT("Marketplace/SCUE4/Source/ThirdParty/x64/"),Guardx64),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
+			//if (!FPaths::FileExists(FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x64/"),Guardx64))) {FGenericPlatformMisc::RequestExit(false);}
+			//GuardProcess = FPlatformProcess::CreateProc(*FPaths::Combine(*FPaths::ProjectPluginsDir(),TEXT("SCUE5/Source/ThirdParty/x64/"),Guardx64),Game,false,true,true,&GuardPID,0,nullptr,nullptr);
 			#endif
 		#endif
 	#endif
@@ -4110,8 +4111,9 @@ public:
 		HND = FindWindowA((LPCSTR)"OLLYDBG",NULL); if (HND) {return true;}
 		HND = FindWindowA((LPCSTR)"Window",NULL); if (HND) {return true;}
 		return false;
-		#endif
+		#else
 		return false;
+		#endif
 	#else
 		return false;
 	#endif
